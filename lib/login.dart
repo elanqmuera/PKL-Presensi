@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
           @override
           Widget build(BuildContext context) {
             return Scaffold(
-              backgroundColor: Colors.lightBlue[300],
+              backgroundColor: Colors.white,
               body:Center(
                 
                 child: Container(
@@ -24,11 +24,11 @@ import 'package:flutter/material.dart';
                     children: [                    
                       const Text("Selamat Datang",
                        style:TextStyle(fontSize: 30, fontWeight: FontWeight.w700,
-                       color: Colors.white),),
+                       color: Colors.lightBlue),),
                        const SizedBox(height: 10),
                       const Text("Login Sekarang Untuk Melanjutkan",  
                       style: TextStyle(fontSize: 14,
-                      color: Colors.white),
+                      color: Colors.lightBlue),
                       ),
                       const SizedBox(height: 30,),
                         Column(
@@ -38,7 +38,7 @@ import 'package:flutter/material.dart';
                                 width: MediaQuery.of(context).size.width,
                             decoration: const BoxDecoration(
                               image: DecorationImage(
-                              image: AssetImage('assets/image/login.png'),
+                              image: AssetImage('assets/image/pklku.png'),
                             ),
                             ),
 
@@ -50,17 +50,17 @@ import 'package:flutter/material.dart';
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text("Login", 
+                          const Text("Username", 
                           style: TextStyle(
                             fontSize: 15, fontWeight: FontWeight.w700,
-                            color: Colors.white)
+                            color: Colors.lightBlue)
                             ),
                             const SizedBox(height: 10,),
                             Container(
                               width: double.infinity,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
-                                color: Colors.white,
+                                color: Colors.black12,
                               ),
                               child: const TextField(
                                 decoration: InputDecoration(
@@ -79,14 +79,34 @@ import 'package:flutter/material.dart';
                           const Text("Password", 
                           style: TextStyle(
                             fontSize: 15, fontWeight: FontWeight.w700,
-                            color: Colors.white)
+                            color: Colors.lightBlue)
                             ),
                             const SizedBox(height: 10,),
                             Container(
                               width: double.infinity,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
-                                color: Colors.white,
+                                color: Colors.black12,
+                              ),
+                              child: const TextField(
+                                decoration: InputDecoration(
+                                  border: InputBorder.none
+                                ),
+
+                              ))
+                        ],
+                      ),
+                      SizedBox(height: 15,),
+                       Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                         
+                            const SizedBox(height: 10,),
+                            Container(
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.green,
                               ),
                               child: const TextField(
                                 decoration: InputDecoration(

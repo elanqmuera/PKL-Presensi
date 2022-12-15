@@ -13,49 +13,46 @@ class SplashScreen extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
     home: Scaffold(
-      backgroundColor: Color(0xFF29B6F6),
+      backgroundColor: Colors.white,
      
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const SizedBox(
-            height: 90,
+            height: 149,
           ),
         
           const Text(
             'Lontar Lab Foundation',
             style:TextStyle(
             fontSize:30,
-            color : Colors.white,
+            color : Colors.lightBlue,
             fontWeight: FontWeight.bold,
             ),
             textAlign: TextAlign.center,
           ),
-          const SizedBox(
-            height: 8,
-          ),
+          SizedBox(height: 20,),
           const Text(
-            "Penerimaan Praktik Kerja Lapangan",
+            "Penerimaan Praktik Kerja Lapangan\ndan Presensi Siswa",
             style: TextStyle(
               fontSize:18,
-              color : Colors.white,
+              color : Colors.lightBlue,
               fontWeight: FontWeight.w300,
             ),
             textAlign: TextAlign.center,
           ),
-          const SizedBox(
-            height: 20,
-          ),
+        SizedBox(height: 20,),
           Container(
-            height: 300,
+            height: 160,
             width: MediaQuery.of(context).size.width,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/image/splash.png'),
+                image: AssetImage('assets/image/pklku.png'),
               fit: BoxFit.cover,
               ),
             ),
           ),
+           SizedBox(height: 100,),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -65,6 +62,7 @@ class SplashScreen extends StatelessWidget {
                 },
                 ),
                 ),
+                
                 child: Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 60,
@@ -74,13 +72,13 @@ class SplashScreen extends StatelessWidget {
                       borderRadius: BorderRadius.only(
                         topRight: Radius.circular(20),
                       ),
-                      color: Colors.white,
+                      color: Colors.lightBlue,
                     ),
                     child: Text('Lanjutkan',
                     style: TextStyle(
                       fontSize: 17,
                       fontWeight: FontWeight.w700,
-                      color: Colors.lightBlue[400],
+                      color: Colors.white,
                     ),),
                     
                 ),

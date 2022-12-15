@@ -1,12 +1,12 @@
 flutter_native_splash:
   color: "#ffffff"
-  image: assets/image/pengajuan.png
+  image: assets/image/pklku.png
   color_dark: "#121212"
-  image_dark: assets/image/pengajuan.png
+  image_dark: assets/image/pklku.png
   android_12:
-    image: assets/image/pengajuan.png
+    image: assets/image/pklku.png
     icon_background_color: "#ffffff"
-    image_dark: assets/image/pengajuan.png
+    image_dark: assets/image/pklku.png
     icon_background_color_dark: "#121212"
 
   web: false

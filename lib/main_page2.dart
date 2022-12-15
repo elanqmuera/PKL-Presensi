@@ -17,36 +17,39 @@ class _MainPageState extends State<MainPage> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.lightBlue,
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          title: const Text("Lontar Lab Foundation",
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w700,
-              )),
-        ),
+        
         body: Container(
           width: MediaQuery.of(context).size.width,
           padding: const EdgeInsets.all(20),
           decoration: const BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(40),
-              topRight: Radius.circular(40),
-            ),
+            
           ),
+          
           child: ListView(
             children: [
               const SizedBox(
-                height: 50,
+                height: 30,
+              ),
+              Container(
+            height: 140,
+            width: MediaQuery.of(context).size.width,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/image/pklku.png'),
+              fit: BoxFit.cover,
+              ),
+            ),
+          ),
+           const SizedBox(
+                height: 40,
               ),
               Center(
                 child: const Text(
-                  ' Pilih Menu',
+                  ' Silahkan pilih menu dibawah ini',
                   style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.w700,
+                    fontSize: 19,
+                    fontWeight: FontWeight.w300,
                     color: Colors.lightBlue,
                   ),
                 ),
@@ -81,7 +84,7 @@ class _MainPageState extends State<MainPage> {
                       ),
                     ),
                     const SizedBox(
-                      height: 30,
+                      height: 10,
                     ),
                     const Text(
                       'Login',
@@ -121,13 +124,13 @@ class _MainPageState extends State<MainPage> {
                       ),
                     ),
                     const SizedBox(
-                      height: 30,
+                      height: 10,
                     ),
                     const Text(
                       'Pengajuan',
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
-                        color: Colors.lightBlue,
+                        color: Color.fromARGB(255, 116, 31, 152),
                         fontSize:18,
                       ),
                     ),
