@@ -8,5 +8,6 @@ Color whiteColor = const Color(0xffffffff);
 Color textColor = const Color(0xff0D0140);
 Color secondColor = const Color(0xff524B6B);
 Color buttonColor = const Color(0xffE6E1FF);
-Color primaryColor = const Color(0xff130160);
+Color greyColor = Color.fromARGB(255, 171, 169, 176);
+
 

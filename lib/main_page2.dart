@@ -31,16 +31,20 @@ class _MainPageState extends State<MainPage> {
               const SizedBox(
                 height: 30,
               ),
-              Container(
+              Column(
+                children: [
+                  Container(
             height: 140,
             width: MediaQuery.of(context).size.width,
             decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/image/pklku.png'),
-              fit: BoxFit.cover,
-              ),
+                  image: DecorationImage(
+                    image: AssetImage('assets/image/pklku.png'),
+                  fit: BoxFit.cover,
+                  ),
             ),
           ),
+                ],
+              ),
            const SizedBox(
                 height: 40,
               ),

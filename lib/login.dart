@@ -12,118 +12,151 @@ import 'package:flutter/material.dart';
           Widget build(BuildContext context) {
             return Scaffold(
               backgroundColor: Colors.white,
-              body:Center(
-                
-                child: Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 30),
+              body:SingleChildScrollView(
+                child: Center(
                   
-                  child: Column(
-                  
-                    mainAxisAlignment: MainAxisAlignment.center,
+                  child: Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 30),
                     
-                    children: [                    
-                      const Text("Selamat Datang",
-                       style:TextStyle(fontSize: 30, fontWeight: FontWeight.w700,
-                       color: Colors.lightBlue),),
-                       const SizedBox(height: 10),
-                      const Text("Login Sekarang Untuk Melanjutkan",  
-                      style: TextStyle(fontSize: 14,
-                      color: Colors.lightBlue),
-                      ),
-                      const SizedBox(height: 30,),
+                    child: Column(
+                    
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      
+                      children: [  
+                        SizedBox(
+                          height: 70,
+                        ),                  
+                        const Text("Selamat Datang",
+                         style:TextStyle(fontSize: 30, fontWeight: FontWeight.w700,
+                         color: Colors.lightBlue),),
+                         const SizedBox(height: 10),
+                        const Text("Login Sekarang Untuk Melanjutkan",  
+                        style: TextStyle(fontSize: 14,
+                        color: Colors.lightBlue),
+                        ),
+                        const SizedBox(height: 30,),
+                          Column(
+                          children: [
+                            Container(
+                               height: 100,
+                                  width: MediaQuery.of(context).size.width,
+                              decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                image: AssetImage('assets/image/pklku.png'),
+                              ),
+                              ),
+              
+                            ),
+                          ],
+                        ),
+                         const SizedBox(height: 20,),
+              
                         Column(
-                        children: [
-                          Container(
-                             height: 120,
-                                width: MediaQuery.of(context).size.width,
-                            decoration: const BoxDecoration(
-                              image: DecorationImage(
-                              image: AssetImage('assets/image/pklku.png'),
-                            ),
-                            ),
-
-                          ),
-                        ],
-                      ),
-                       const SizedBox(height: 20,),
-
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text("Username", 
-                          style: TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.w700,
-                            color: Colors.lightBlue)
-                            ),
-                            const SizedBox(height: 10,),
-                            Container(
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.black12,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text("Username", 
+                            style: TextStyle(
+                              fontSize: 15, fontWeight: FontWeight.w700,
+                              color: Colors.lightBlue)
                               ),
-                              child: const TextField(
-                                decoration: InputDecoration(
-                                  border: InputBorder.none
+                              const SizedBox(height: 10,),
+                              Container(
+                                width: double.infinity,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.black12,
                                 ),
-
-                              ))
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 10,),
-
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text("Password", 
-                          style: TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.w700,
-                            color: Colors.lightBlue)
-                            ),
-                            const SizedBox(height: 10,),
-                            Container(
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.black12,
+                                
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    hintText: "Username",
+                                    hintStyle: TextStyle(fontSize: 14, color: textColor.withOpacity(0.4)),
+                                    contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 17)
+                                  ),
+                                ),
+                                ),
+                                
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 10,),
+              
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            
+                            const Text("Password", 
+                            style: TextStyle(
+                              fontSize: 15, fontWeight: FontWeight.w700,
+                              color: Colors.lightBlue)
                               ),
-                              child: const TextField(
-                                decoration: InputDecoration(
-                                  border: InputBorder.none
+                              const SizedBox(height: 10,),
+                              Container(
+                                width: double.infinity,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.black12,
                                 ),
-
-                              ))
-                        ],
-                      ),
-                      SizedBox(height: 15,),
-                       Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                         
-                            const SizedBox(height: 10,),
-                            Container(
+                                child:  TextField(
+                                  obscureText: true,
+                                  decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    hintText: "Password",
+                                    hintStyle: TextStyle(fontSize: 13, color: textColor.withOpacity(0.4)),
+                                    contentPadding: EdgeInsets.symmetric(horizontal: 16,vertical: 17),
+                                    suffixIcon: Icon(Icons.visibility_off)
+                                  ),
+                                )
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  
+                                  children: [
+                                    Container(
+                                      width: 24,
+                                      height: 24,
+                                      decoration: BoxDecoration(
+                                        color: Colors.black12,
+                                        borderRadius: BorderRadius.circular(5),
+                                      ),
+                                    
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text('Ingatkan Saya',
+                                    style: TextStyle(color: Colors.grey, fontSize: 13)),
+                                    SizedBox(
+                                      width: 80,
+                                    ),
+              
+                                    Text('Lupa Password ?',
+                                    style: TextStyle(
+                                      color: Colors.black, 
+                                      fontSize: 13, fontWeight: FontWeight.w500),)
+                                    ],
+                                )
+                          ],
+                        ),
+                        SizedBox(height: 7,),
+                         Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                              const SizedBox(height: 10,),
+                             Container(
                               width: double.infinity,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.green,
-                              ),
-                              child: const TextField(
-                                decoration: InputDecoration(
-                                  border: InputBorder.none
-                                ),
-
-                              ))
-                        ],
-                      ),
-                      
-                    
-                      
-                    ],
+                            
+                              child: ElevatedButton(onPressed:(){}, child: Text('Login')))
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              )
-            
+              )  
             );
           }
         }

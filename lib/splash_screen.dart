@@ -42,15 +42,26 @@ class SplashScreen extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
         SizedBox(height: 20,),
-          Container(
-            height: 160,
-            width: MediaQuery.of(context).size.width,
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/image/pklku.png'),
-              fit: BoxFit.cover,
+          Row(
+            children: [
+              Column(
+                children: [
+                  Container(
+                    height: 160,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(25)
+                      ),
+                      image: DecorationImage(
+                        image: AssetImage('assets/image/pklku.png'),
+                      fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ),
+            ],
           ),
            SizedBox(height: 100,),
           Row(
