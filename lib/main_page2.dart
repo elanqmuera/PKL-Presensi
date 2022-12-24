@@ -48,8 +48,8 @@ class _MainPageState extends State<MainPage> {
            const SizedBox(
                 height: 40,
               ),
-              Center(
-                child: const Text(
+              const Center(
+                child:  Text(
                   ' Silahkan pilih menu dibawah ini',
                   style: TextStyle(
                     fontSize: 19,

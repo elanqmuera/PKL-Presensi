@@ -1,8 +1,8 @@
 
-
 // ignore: unused_import
 import 'package:tsel/color_schema.dart';
 import 'package:flutter/material.dart';  
+import 'package:tsel/utama.dart';  
 
         // ignore: camel_case_types
         class login extends StatelessWidget {
@@ -127,11 +127,11 @@ import 'package:flutter/material.dart';
                                     SizedBox(
                                       width: 10,
                                     ),
-                                    Text('Ingatkan Saya',
-                                    style: TextStyle(color: Colors.grey, fontSize: 13)),
-                                    SizedBox(
-                                      width: 80,
-                                    ),
+                        Text('Ingatkan Saya',
+                               style: TextStyle(color: Colors.grey, fontSize: 13)),
+                                  SizedBox(
+                                     width: 80,
+                                   ),
               
                                     Text('Lupa Password ?',
                                     style: TextStyle(
@@ -149,7 +149,17 @@ import 'package:flutter/material.dart';
                              Container(
                               width: double.infinity,
                             
-                              child: ElevatedButton(onPressed:(){}, child: Text('Login')))
+                              child: ElevatedButton(
+                                onPressed:(){
+                                  Navigator.push(
+                                    context, 
+                                    MaterialPageRoute(
+                                      builder: (context) => HalamanUtama(),
+                                       ),
+                                        );
+                                }, child: Text('Login')
+                              )
+                           ),
                           ],
                         ),
                       ],

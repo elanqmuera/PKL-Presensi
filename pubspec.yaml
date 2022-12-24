@@ -17,6 +17,7 @@ dependencies:
  
   cupertino_icons: ^1.0.2
   flutter_native_splash: ^2.2.16
+  qr_code_scanner: ^1.0.1
   
 
 dev_dependencies:
