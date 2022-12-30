@@ -2,6 +2,8 @@
 import 'package:tsel/color_schema.dart';
 import 'package:flutter/material.dart';
 import 'package:tsel/login.dart';
+import 'package:tsel/pages/Keterangan.dart';
+import 'package:tsel/pages/profile.dart';
 import 'package:tsel/pages/scanqr.dart';
 
 class HalamanUtama extends StatefulWidget {
@@ -22,13 +24,8 @@ class _MainPageState extends State<HalamanUtama> {
 
 List<Widget> pages = [
   scanqr(),
-      const Center(
-    child: Text(
-      'Keterangan', style: TextStyle(
-      fontSize: 40
-      ),
-      ),
-      ),
+  Keterangan(),
+      
       const Center(
     child: Text(
       'Laporan Presensi', style: TextStyle(
@@ -36,13 +33,7 @@ List<Widget> pages = [
       ),
       ),
       ),
-      const Center(
-    child: Text(
-      'Profile', style: TextStyle(
-      fontSize: 40
-      ),
-      ),
-      ),
+      Profil(),
      
 ];
 
@@ -52,8 +43,8 @@ List<Widget> pages = [
       body: pages[_SelectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
         iconSize: 30,
         selectedItemColor: Colors.black,
         currentIndex: _SelectedIndex,
@@ -61,19 +52,19 @@ List<Widget> pages = [
         items:[
         BottomNavigationBarItem(
           icon: Icon(_SelectedIndex ==0 ? Icons.qr_code_2_outlined : Icons.qr_code_2_outlined),
-        label:'Home'
+        label:'Scan'
         ),
         BottomNavigationBarItem(
-          icon: Icon(_SelectedIndex ==1 ? Icons.report_gmailerrorred_outlined : Icons.report_gmailerrorred_outlined),
-        label:'Search'
+          icon: Icon(_SelectedIndex ==1 ? Icons.description_outlined : Icons.description_outlined),
+        label:'Keterangan'
         ),
         BottomNavigationBarItem(
-          icon: Icon(_SelectedIndex ==2 ? Icons.qr_code_2_outlined : Icons.qr_code_2_outlined),
-        label:'Reels'
+          icon: Icon(_SelectedIndex ==2 ? Icons.description_rounded : Icons.description_rounded),
+        label:'Laporan'
         ),
         BottomNavigationBarItem(
           icon: Icon(_SelectedIndex ==3 ?  Icons.person :Icons.person_outlined),
-        label:'Shop'
+        label:'Profile'
         ),
         
       ],

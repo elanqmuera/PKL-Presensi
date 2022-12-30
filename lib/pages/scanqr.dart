@@ -12,16 +12,20 @@ class scanqr extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(     
-      body: Center(  
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => const QRViewExample(),
-            ));
-          },
-          child: const Text('Scan QR Code',
-          style: TextStyle(fontSize: 15),),
+    return Scaffold(    
+       
+      body: Container(
+        
+        child: Center(  
+          child: ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const QRViewExample(),
+              ));
+            },
+            child: const Text('Scan QR Code',
+            style: TextStyle(fontSize: 20),),
+          ),
         ),
       ),
     );

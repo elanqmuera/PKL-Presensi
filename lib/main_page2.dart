@@ -28,33 +28,33 @@ class _MainPageState extends State<MainPage> {
           
           child: ListView(
             children: [
-              const SizedBox(
-                height: 30,
-              ),
+              // const SizedBox(
+              //   height: 30,
+              // ),
               Column(
                 children: [
                   Container(
             height: 140,
-            width: MediaQuery.of(context).size.width,
+            width: 500,
             decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/image/pklku.png'),
+                    image: AssetImage('assets/image/halo.png',),
                   fit: BoxFit.cover,
                   ),
             ),
           ),
                 ],
               ),
-           const SizedBox(
-                height: 40,
-              ),
+          //  const SizedBox(
+          //       height: 40,
+          //     ),
               const Center(
                 child:  Text(
                   ' Silahkan pilih menu dibawah ini',
                   style: TextStyle(
-                    fontSize: 19,
+                    fontSize: 15,
                     fontWeight: FontWeight.w300,
-                    color: Colors.lightBlue,
+                    color: Colors.black,
                   ),
                 ),
               ),
