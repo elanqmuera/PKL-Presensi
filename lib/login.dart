@@ -54,7 +54,7 @@ import 'package:tsel/utama.dart';
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text("Username", 
+                            const Text("Email", 
                             style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.w700,
                               color: Colors.lightBlue)
@@ -70,7 +70,7 @@ import 'package:tsel/utama.dart';
                                 child: TextField(
                                   decoration: InputDecoration(
                                     border: InputBorder.none,
-                                    hintText: "Username",
+                                    hintText: "Email address",
                                     hintStyle: TextStyle(fontSize: 14, color: textColor.withOpacity(0.4)),
                                     contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 17)
                                   ),

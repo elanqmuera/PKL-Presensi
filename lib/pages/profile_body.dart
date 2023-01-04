@@ -19,14 +19,14 @@ class ProfileBody extends StatelessWidget {
           Container(
             padding: EdgeInsets.all(1.0),
             decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  color: Color.fromARGB(255, 140, 139, 139),
-                  blurRadius: 10,
-                  offset: Offset(0, 2)
-                ),
+              // boxShadow: [
+              //   BoxShadow(
+              //     color: Color.fromARGB(255, 140, 139, 139),
+              //     blurRadius: 30,
+              //     offset: Offset(0, 2)
+              //   ),
                 
-              ],
+              // ],
               borderRadius: BorderRadius.all(Radius.circular(60),
               ),
               // color: Colors.black87
@@ -36,7 +36,7 @@ class ProfileBody extends StatelessWidget {
             child: CircleAvatar(
               
               backgroundImage: AssetImage('assets/image/elang.jpeg'),
-              radius: 60,
+              radius: 55,
               ),
           ),
             SizedBox(
@@ -67,16 +67,16 @@ class ProfileBody extends StatelessWidget {
             ),
             ),
             SizedBox(
-              height: 20,
+              height: 40,
             ),
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                color: Colors.lightBlueAccent,
+                color:Colors.transparent,
               ),
                
               padding: EdgeInsets.all(12),
-              margin:EdgeInsets.only(left: 20, right: 20),
+              margin:EdgeInsets.only(left: 10, right: 10),
               child: Column(
               
                 children: [
@@ -84,14 +84,14 @@ class ProfileBody extends StatelessWidget {
                    Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
-                       Text('Sekolah  '),
+                       Text('Sekolah'),
                        Spacer(),
                       Text('Politeknik Negeri Subang'),
                       SizedBox(width: 10.0,),
-                      Icon(Icons.school_outlined)
+                      
                     ],
                   ),
-                  const Divider(color: Colors.white),
+                  const Divider(color: Color.fromARGB(255, 0, 0, 0)),
                    Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
@@ -99,10 +99,10 @@ class ProfileBody extends StatelessWidget {
                       Spacer(),
                       Text('Management Informatika'),
                       SizedBox(width: 10.0,),
-                      Icon(Icons.military_tech_rounded)
+                      
                     ],
                   ),
-                  const Divider(color: Colors.white,),
+                  const Divider(color: Color.fromARGB(255, 0, 0, 0),),
                    Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
@@ -110,7 +110,41 @@ class ProfileBody extends StatelessWidget {
                       Spacer(),
                       Text('Sistem Informasi'),
                       SizedBox(width: 10.0,),
-                      Icon(Icons.military_tech_rounded)
+                      
+                    ],
+                  ),
+                  
+                   const Divider(color: Color.fromARGB(255, 0, 0, 0),),
+                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Text('Alamat '),
+                      Spacer(),
+                      Text('Subang - Jawa Barat'),
+                      SizedBox(width: 10.0,),
+                     
+                    ],
+                  ),
+                   const Divider(color: Color.fromARGB(255, 0, 0, 0),),
+                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Text('Jenis Kelamin '),
+                      Spacer(),
+                      Text('Laki - laki'),
+                      SizedBox(width: 10.0,),
+                      
+                    ],
+                  ),
+                   const Divider(color: Color.fromARGB(255, 0, 0, 0),),
+                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Text('Nomor ponsel '),
+                      Spacer(),
+                      Text('+6283195739340'),
+                      SizedBox(width: 10.0,),
+                      
                     ],
                   ),
                 ],

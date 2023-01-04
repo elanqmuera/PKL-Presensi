@@ -1,36 +1,8 @@
-import 'dart:developer';
-import 'dart:io';
-
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
-
-
-
-class scanqr extends StatelessWidget {
-  const scanqr ({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(    
-       
-      body: Container(
-        
-        child: Center(  
-          child: ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => const QRViewExample(),
-              ));
-            },
-            child: const Text('Scan QR Code',
-            style: TextStyle(fontSize: 20),),
-          ),
-        ),
-      ),
-    );
-  }
-}
+import 'dart:developer';
+import 'dart:io';
+import 'package:flutter/foundation.dart';
 
 class QRViewExample extends StatefulWidget {
   const QRViewExample({Key? key}) : super(key: key);
@@ -50,19 +22,21 @@ class _QRViewExampleState extends State<QRViewExample> {
   void reassemble() {
     super.reassemble();
     if (Platform.isAndroid) {
-      controller!.pauseCamera();
+      controller!.resumeCamera();
     }
-    controller!.resumeCamera();
+    controller!.pauseCamera();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        
         children: <Widget>[
-          Expanded(flex: 4, child: _buildQrView(context)),
+          Expanded(flex: 10, child: _buildQrView(context)),
+          
           Expanded(
-            flex: 1,
+            flex: 2,
             child: FittedBox(
               fit: BoxFit.contain,
               child: Column(
@@ -72,44 +46,45 @@ class _QRViewExampleState extends State<QRViewExample> {
                     Text(
                         'Barcode Type: ${describeEnum(result!.format)}   Data: ${result!.code}')
                   else
-                    const Text('Scan a code'),
+                    const Text('Silahkan Scan QR Code ',
+                    style: TextStyle(fontSize: 8),),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
-                      Container(
-                        margin: const EdgeInsets.all(8),
-                        child: ElevatedButton(
-                            onPressed: () async {
-                              await controller?.toggleFlash();
-                              setState(() {});
-                            },
-                            child: FutureBuilder(
-                              future: controller?.getFlashStatus(),
-                              builder: (context, snapshot) {
-                                return Text('Flash: ${snapshot.data}');
-                              },
-                            )),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.all(8),
-                        child: ElevatedButton(
-                            onPressed: () async {
-                              await controller?.flipCamera();
-                              setState(() {});
-                            },
-                            child: FutureBuilder(
-                              future: controller?.getCameraInfo(),
-                              builder: (context, snapshot) {
-                                if (snapshot.data != null) {
-                                  return Text(
-                                      'Camera facing ${describeEnum(snapshot.data!)}');
-                                } else {
-                                  return const Text('loading');
-                                }
-                              },
-                            )),
-                      )
+                      // Container(
+                      //   margin: const EdgeInsets.all(8),
+                      //   child: ElevatedButton(
+                      //       onPressed: () async {
+                      //         await controller?.toggleFlash();
+                      //         setState(() {});
+                      //       },
+                      //       child: FutureBuilder(
+                      //         future: controller?.getFlashStatus(),
+                      //         builder: (context, snapshot) {
+                      //           return Text('Flash: ${snapshot.data}');
+                      //         },
+                      //       )),
+                      // ),
+                      // Container(
+                      //   margin: const EdgeInsets.all(8),
+                      //   child: ElevatedButton(
+                      //       onPressed: () async {
+                      //         await controller?.flipCamera();
+                      //         setState(() {});
+                      //       },
+                      //       child: FutureBuilder(
+                      //         future: controller?.getCameraInfo(),
+                      //         builder: (context, snapshot) {
+                      //           if (snapshot.data != null) {
+                      //             return Text(
+                      //                 'Camera facing ${describeEnum(snapshot.data!)}');
+                      //           } else {
+                      //             return const Text('loading');
+                      //           }
+                      //         },
+                      //       )),
+                      // )
                     ],
                   ),
                   Row(
@@ -122,8 +97,8 @@ class _QRViewExampleState extends State<QRViewExample> {
                           onPressed: () async {
                             await controller?.pauseCamera();
                           },
-                          child: const Text('pause',
-                              style: TextStyle(fontSize: 20)),
+                          child: const Text('Hentikan Camera',
+                              style: TextStyle(fontSize: 8)),
                         ),
                       ),
                       Container(
@@ -132,8 +107,8 @@ class _QRViewExampleState extends State<QRViewExample> {
                           onPressed: () async {
                             await controller?.resumeCamera();
                           },
-                          child: const Text('resume',
-                              style: TextStyle(fontSize: 20)),
+                          child: const Text('Lanjutkan Camera',
+                              style: TextStyle(fontSize: 8)),
                         ),
                       )
                     ],
@@ -151,7 +126,7 @@ class _QRViewExampleState extends State<QRViewExample> {
     // For this example we check how width or tall the device is and change the scanArea and overlay accordingly.
     var scanArea = (MediaQuery.of(context).size.width < 400 ||
             MediaQuery.of(context).size.height < 400)
-        ? 150.0
+        ? 250.0
         : 300.0;
     // To ensure the Scanner view is properly sizes after rotation
     // we need to listen for Flutter SizeChanged notification and update controller
@@ -159,10 +134,11 @@ class _QRViewExampleState extends State<QRViewExample> {
       key: qrKey,
       onQRViewCreated: _onQRViewCreated,
       overlay: QrScannerOverlayShape(
-          borderColor: Colors.red,
+          borderColor: Color.fromRGBO(33, 150, 243, 1),
           borderRadius: 10,
-          borderLength: 30,
-          borderWidth: 10,
+          borderLength: 40,
+          borderWidth: 15,
+          
           cutOutSize: scanArea),
       onPermissionSet: (ctrl, p) => _onPermissionSet(context, ctrl, p),
     );

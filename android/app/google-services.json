@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "542474370781",
+    "project_id": "absensi-pklku",
+    "storage_bucket": "absensi-pklku.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:542474370781:android:3dd05d6442a8dee09b6534",
+        "android_client_info": {
+          "package_name": "com.tsel.tsel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "542474370781-vhu794br2mudl9ucsh88kgjhp06fo6m4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVPnsQt5f71HqqKhZrggjEbteyBAzBDdQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "542474370781-vhu794br2mudl9ucsh88kgjhp06fo6m4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

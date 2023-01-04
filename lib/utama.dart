@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:tsel/login.dart';
 import 'package:tsel/pages/Keterangan.dart';
 import 'package:tsel/pages/profile.dart';
-import 'package:tsel/pages/scanqr.dart';
+import 'package:tsel/pages/home.dart';
 
 class HalamanUtama extends StatefulWidget {
   const HalamanUtama({Key? key}) : super(key: key);
@@ -51,16 +51,16 @@ List<Widget> pages = [
         onTap: _onTap,
         items:[
         BottomNavigationBarItem(
-          icon: Icon(_SelectedIndex ==0 ? Icons.qr_code_2_outlined : Icons.qr_code_2_outlined),
-        label:'Scan'
+          icon: Icon(_SelectedIndex ==0 ? Icons.home_outlined : Icons.home_outlined),
+        label:'Home'
         ),
         BottomNavigationBarItem(
           icon: Icon(_SelectedIndex ==1 ? Icons.description_outlined : Icons.description_outlined),
         label:'Keterangan'
         ),
         BottomNavigationBarItem(
-          icon: Icon(_SelectedIndex ==2 ? Icons.description_rounded : Icons.description_rounded),
-        label:'Laporan'
+          icon: Icon(_SelectedIndex ==2 ? Icons.schedule_outlined : Icons.schedule_outlined),
+        label:'Jadwal'
         ),
         BottomNavigationBarItem(
           icon: Icon(_SelectedIndex ==3 ?  Icons.person :Icons.person_outlined),

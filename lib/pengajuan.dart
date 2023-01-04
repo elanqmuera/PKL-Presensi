@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
        
           @override
           Widget build(BuildContext context) {
-            String _jk="";
+           const String _jk="";
             return Scaffold(
               backgroundColor: Colors.white,
               body:SingleChildScrollView(
@@ -25,7 +25,7 @@ import 'package:flutter/material.dart';
                       mainAxisAlignment: MainAxisAlignment.center,
                       
                       children: [                    
-                      SizedBox(height: 70,),
+                      const SizedBox(height: 70,),
                           Column(
                           children: [
                             Container(

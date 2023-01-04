@@ -22,7 +22,9 @@ class Profil extends StatelessWidget {
       backgroundColor: Colors.white,
       
 
-      body: const ProfileBody()
+      body: SingleChildScrollView
+      (
+        child: const ProfileBody())
       );
   }
 }
