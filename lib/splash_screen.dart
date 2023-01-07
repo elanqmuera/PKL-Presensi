@@ -1,7 +1,9 @@
 
 import 'dart:async';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:tsel/TampilanAwal.dart';
+import 'package:tsel/utama.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -22,12 +24,22 @@ void initState() {
 startSplashScreen() async {
   var duration = const Duration (seconds: 5);
   return Timer(duration, () {
-    Navigator.of(context).pushReplacement(
+    if (FirebaseAuth.instance.currentUser == null) {
+       Navigator.of(context).pushReplacement(
       MaterialPageRoute(builder: (_) {
         return TampilanAwal();
       }
       )
     );
+    } else {
+       Navigator.of(context).pushReplacement(
+      MaterialPageRoute(builder: (_) {
+        return HalamanUtama();
+      }
+      )
+    );
+    }
+   
   },
   );
 }

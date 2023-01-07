@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:tsel/login.dart';
 
 class ProfileBody extends StatelessWidget {
   const ProfileBody({
@@ -51,18 +52,18 @@ class ProfileBody extends StatelessWidget {
             SizedBox(
               height: 5,
             ),
-            Text('muhammadelang030415@gmail.com',
+            Text('Peserta Praktik Kerja Lapangan',
             style: TextStyle(
-              fontSize:12,
+              fontSize:14,
               color: Color.fromARGB(255, 89, 87, 87)
             ),
             ),
            const SizedBox(
               height: 5,
             ),
-           const Text('083195739340',
+           const Text('muhammadelang030415@gmail.com',
              style: TextStyle(
-              fontSize:13,
+              fontSize:11,
               color: Color.fromARGB(255, 113, 111, 111)
             ),
             ),
@@ -147,7 +148,21 @@ class ProfileBody extends StatelessWidget {
                       
                     ],
                   ),
+                  Container(
+                    child: ElevatedButton(
+                    onPressed: () {
+                    Navigator.push(
+                    context, 
+                      MaterialPageRoute(
+                          builder: (context) => login(),
+                        ),
+                    );
+                    },
+                    child: Text('Logout'),
+             )
+                  )
                 ],
+                
               ),
             )
         ],

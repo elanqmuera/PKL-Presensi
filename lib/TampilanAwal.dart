@@ -44,7 +44,7 @@ class _TampilanAwalState extends State<TampilanAwal> {
         ),
         PageViewModel(
           title: 'Absensi langsung di aplikasi',
-          body: 'Isi daftar hadir dengan menggunakan fitur\n jam-masuk/jam-keluar di aplikasi.',
+          body: 'Isi daftar hadir dengan menggunakan fitur\n maps jam-masuk/jam-keluar di aplikasi.',
           image : Image.asset('assets/image/maps.png',
           width: 350, height: 200,),
           decoration: _pageDecoration,

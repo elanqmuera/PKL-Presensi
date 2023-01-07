@@ -3,6 +3,7 @@ import 'package:tsel/color_schema.dart';
 import 'package:flutter/material.dart';
 import 'package:tsel/login.dart';
 import 'package:tsel/pages/Keterangan.dart';
+import 'package:tsel/pages/jadwal.dart';
 import 'package:tsel/pages/profile.dart';
 import 'package:tsel/pages/home.dart';
 
@@ -24,15 +25,8 @@ class _MainPageState extends State<HalamanUtama> {
 
 List<Widget> pages = [
   scanqr(),
-  Keterangan(),
-      
-      const Center(
-    child: Text(
-      'Laporan Presensi', style: TextStyle(
-      fontSize: 40
-      ),
-      ),
-      ),
+  keterangan(),
+      Jadwal(),
       Profil(),
      
 ];

@@ -12,11 +12,25 @@ class Profil extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile'),
+        title: Text('Profile',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w500
+            ),
+        ),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: <Color> [Color.fromARGB(255, 2, 49, 130), Color.fromARGB(223, 37, 182, 255)]
+            )
+          ),
+        ),
         actions: [IconButton(onPressed: () {}, icon: Icon(Icons.edit))],
         centerTitle: true,
-        backgroundColor: whiteColor,
-        foregroundColor: Color.fromARGB(255, 43, 42, 42),
+        backgroundColor: Color.fromARGB(255, 0, 119, 223) ,
+        foregroundColor: Color.fromARGB(255, 255, 255, 255),
         elevation: 0.0,
       ),
       backgroundColor: Colors.white,

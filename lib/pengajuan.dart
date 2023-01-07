@@ -43,7 +43,7 @@ import 'package:flutter/material.dart';
                         const SizedBox(height: 20,),
                         const Text("Pengajuan Praktik Kerja Lapangan",  
                         style: TextStyle(fontSize: 16,
-                        color: Colors.lightBlue),
+                        color: Color.fromARGB(255, 61, 62, 62)),
                         ),
                          const SizedBox(height: 20,),
               
@@ -52,8 +52,8 @@ import 'package:flutter/material.dart';
                           children: [
                             const Text("Nama Lengkap", 
                             style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.w300,
-                              color: Colors.lightBlue)
+                              fontSize: 15, fontWeight: FontWeight.w400,
+                              color: Color.fromARGB(255, 61, 62, 62))
                               ),
                               const SizedBox(height: 10,),
                               Container(
@@ -82,8 +82,8 @@ import 'package:flutter/material.dart';
                           children: [
                             const Text("Asal Instansi / Sekolah", 
                             style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.w300,
-                              color: Colors.lightBlue)
+                              fontSize: 15, fontWeight: FontWeight.w400,
+                              color: Color.fromARGB(255, 61, 62, 62))
                               ),
                               const SizedBox(height: 10,),
                               Container(
@@ -109,8 +109,8 @@ import 'package:flutter/material.dart';
                           children: [
                             const Text("Alamat", 
                             style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.w300,
-                              color: Colors.lightBlue)
+                              fontSize: 15, fontWeight: FontWeight.w400,
+                              color: Color.fromARGB(255, 61, 62, 62))
                               ),
                               const SizedBox(height: 10,),
                               Container(
@@ -137,8 +137,8 @@ import 'package:flutter/material.dart';
                           children: [
                             const Text("Jurusan", 
                             style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.w300,
-                              color: Colors.lightBlue)
+                              fontSize: 15, fontWeight: FontWeight.w400,
+                              color: Color.fromARGB(255, 61, 62, 62))
                               ),
                               const SizedBox(height: 10,),
                               Container(
@@ -163,8 +163,8 @@ import 'package:flutter/material.dart';
                           children: [
                             const Text("Kelas / Semester", 
                             style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.w300,
-                              color: Colors.lightBlue)
+                              fontSize: 15, fontWeight: FontWeight.w400,
+                              color: Color.fromARGB(255, 61, 62, 62))
                               ),
                               const SizedBox(height: 10,),
                               Container(
@@ -189,8 +189,8 @@ import 'package:flutter/material.dart';
                           children: [
                             const Text("Jenis Kelamin", 
                             style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.w300,
-                              color: Colors.lightBlue)
+                              fontSize: 15, fontWeight: FontWeight.w400,
+                              color: Color.fromARGB(255, 61, 62, 62))
                               ),
                               const SizedBox(height: 10,),
                               Container(
@@ -218,8 +218,8 @@ import 'package:flutter/material.dart';
                           children: [
                             const Text("Email", 
                             style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.w300,
-                              color: Colors.lightBlue)
+                              fontSize: 15, fontWeight: FontWeight.w400,
+                              color: Color.fromARGB(255, 61, 62, 62))
                               ),
                               const SizedBox(height: 10,),
                               Container(
@@ -244,8 +244,9 @@ import 'package:flutter/material.dart';
                           children: [
                             const Text("No.Hp", 
                             style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.w300,
-                              color: Colors.lightBlue)
+                              fontSize: 14, fontWeight: FontWeight.w400,
+                              color: Color.fromARGB(255, 61, 62, 62),
+                              )
                               ),
                               const SizedBox(height: 10,),
                               Container(

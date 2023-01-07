@@ -1,13 +1,24 @@
 
 // ignore: unused_import
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:tsel/color_schema.dart';
 import 'package:flutter/material.dart';  
 import 'package:tsel/utama.dart';  
 
         // ignore: camel_case_types
-        class login extends StatelessWidget {
-          const login({ Key? key }) : super(key: key);
-        
+        class login extends StatefulWidget {
+           login({ Key? key }) : super(key: key);
+
+  @override
+  State<login> createState() => _loginState();
+}
+
+class _loginState extends State<login> {
+        String email = '';
+
+        String password = '';
+
           @override
           Widget build(BuildContext context) {
             return Scaffold(
@@ -28,11 +39,11 @@ import 'package:tsel/utama.dart';
                         ),                  
                         const Text("Selamat Datang",
                          style:TextStyle(fontSize: 30, fontWeight: FontWeight.w700,
-                         color: Colors.lightBlue),),
+                         color: Color.fromARGB(255, 61, 62, 62)),),
                          const SizedBox(height: 10),
                         const Text("Login Sekarang Untuk Melanjutkan",  
                         style: TextStyle(fontSize: 14,
-                        color: Colors.lightBlue),
+                        color: Color.fromARGB(255, 44, 45, 45)),
                         ),
                         const SizedBox(height: 30,),
                           Column(
@@ -56,8 +67,8 @@ import 'package:tsel/utama.dart';
                           children: [
                             const Text("Email", 
                             style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.w700,
-                              color: Colors.lightBlue)
+                              fontSize: 15, fontWeight: FontWeight.w500,
+                              color: Color.fromARGB(255, 61, 62, 62))
                               ),
                               const SizedBox(height: 10,),
                               Container(
@@ -68,6 +79,10 @@ import 'package:tsel/utama.dart';
                                 ),
                                 
                                 child: TextField(
+                                  onChanged: (value) {
+                                    email = value ;
+                                    
+                                  },
                                   decoration: InputDecoration(
                                     border: InputBorder.none,
                                     hintText: "Email address",
@@ -88,8 +103,8 @@ import 'package:tsel/utama.dart';
                             
                             const Text("Password", 
                             style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.w700,
-                              color: Colors.lightBlue)
+                              fontSize: 15, fontWeight: FontWeight.w500,
+                              color: Color.fromARGB(255, 61, 62, 62))
                               ),
                               const SizedBox(height: 10,),
                               Container(
@@ -99,6 +114,9 @@ import 'package:tsel/utama.dart';
                                   color: Colors.black12,
                                 ),
                                 child:  TextField(
+                                   onChanged: (value) {
+                                    password = value ;
+                                  },
                                   obscureText: true,
                                   decoration: InputDecoration(
                                     border: InputBorder.none,
@@ -150,13 +168,23 @@ import 'package:tsel/utama.dart';
                               width: double.infinity,
                             
                               child: ElevatedButton(
-                                onPressed:(){
-                                  Navigator.push(
+                                onPressed:()async {
+                                  try {
+                                    print (email) ;
+                                    print (password);
+                                    await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password );
+                                   Navigator.pushAndRemoveUntil(
                                     context, 
                                     MaterialPageRoute(
                                       builder: (context) => HalamanUtama(),
                                        ),
+                                       ((route) => false)
                                         );
+                                  } catch (e) {
+                                    print (e.toString());
+                                  }
+                                  
+                                 
                                 }, child: Text('Login')
                               )
                            ),
@@ -169,4 +197,4 @@ import 'package:tsel/utama.dart';
               )  
             );
           }
-        }
+}
