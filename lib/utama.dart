@@ -25,7 +25,7 @@ class _MainPageState extends State<HalamanUtama> {
 
 List<Widget> pages = [
   scanqr(),
-  keterangan(),
+  // keterangan(),
       Jadwal(),
       Profil(),
      
@@ -48,10 +48,10 @@ List<Widget> pages = [
           icon: Icon(_SelectedIndex ==0 ? Icons.home_outlined : Icons.home_outlined),
         label:'Home'
         ),
-        BottomNavigationBarItem(
-          icon: Icon(_SelectedIndex ==1 ? Icons.description_outlined : Icons.description_outlined),
-        label:'Keterangan'
-        ),
+        // BottomNavigationBarItem(
+        //   icon: Icon(_SelectedIndex ==1 ? Icons.description_outlined : Icons.description_outlined),
+        // label:'Keterangan'
+        // ),
         BottomNavigationBarItem(
           icon: Icon(_SelectedIndex ==2 ? Icons.schedule_outlined : Icons.schedule_outlined),
         label:'Jadwal'

@@ -19,6 +19,7 @@ dependencies:
   # flutter_native_splash: ^2.2.16
   qr_code_scanner: ^1.0.1
   introduction_screen: ^3.1.2
+  cloud_firestore: ^4.3.1
   firebase_core: ^2.4.1
   firebase_auth: ^4.2.4
   # google_fonts: ^3.0.1
