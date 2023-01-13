@@ -22,9 +22,16 @@ dependencies:
   cloud_firestore: ^4.3.1
   firebase_core: ^2.4.1
   firebase_auth: ^4.2.4
+  intl:
+  # firebase_analytics: ^10.1.0
+  
+  firebase_storage: ^11.0.10
+  # image_picker: ^0.8.6
   # google_fonts: ^3.0.1
   # flutter_keyboard_visibility: ^5.4.0
   
+dependency_overrides:
+  # image_picker_android: 0.8.4+13
 
 dev_dependencies:
   flutter_test:

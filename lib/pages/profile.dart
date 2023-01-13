@@ -36,55 +36,21 @@ class Profil extends StatelessWidget {
           stream: Database().streamProfile(),
           builder:
               (_, AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
+                
             if (!snapshot.hasData) {
               return const Center(
                 child: Text("Data tidak ada"),
               );
             } else {
-              List<DocumentSnapshot<Map<String, dynamic>>> documents =
-                  snapshot.data!.docs;
-
-              print(documents);
+             Map<String, dynamic> user =
+                  snapshot.data!.docs[0].data();
+                
 
               return SingleChildScrollView(
                 child: Column(
                   children: [
-                    Column(
-                      children: List.generate(documents.length, (index) {
-                        DocumentSnapshot<Map<String, dynamic>> docs =
-                            documents[index];
-                        return Container(child: _listWidget(docs, context));
-                      }),
-                    ),
-                    Container(
-                        child: ElevatedButton(
-                      onPressed: () async {
-                        await FirebaseAuth.instance.signOut();
-                        Navigator.pushAndRemoveUntil(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => login(),
-                            ),
-                            ((route) => false));
-                      },
-                      child: Text('Logout'),
-                    ))
-                  ],
-                ),
-              );
-            }
-          }),
-    );
-  }
-}
-
-Widget _listWidget(
-    DocumentSnapshot<Map<String, dynamic>> docs, BuildContext context) {
-  return SizedBox(
-    width: double.infinity,
-    child: Column(
-      // mainAxisAlignment: MainAxisAlignment.center,
-      children: [
+                     
+                  
         const SizedBox(
           height: 15,
         ),
@@ -97,7 +63,7 @@ Widget _listWidget(
             // color: Colors.black87
           ),
           child:  CircleAvatar(
-            backgroundImage: NetworkImage(docs.data()!['images'].toString()),
+            backgroundImage: NetworkImage(user['images']),
             radius: 55,
           ),
         ),
@@ -105,7 +71,7 @@ Widget _listWidget(
           height: 10,
         ),
         Text(
-          docs.data()!['nama'],
+          user['nama'],
           style: TextStyle(
               fontSize: 28.0,
               fontWeight: FontWeight.bold,
@@ -123,7 +89,7 @@ Widget _listWidget(
           height: 5,
         ),
         Text(
-          docs.data()!['email'],
+          user['email'],
           style: TextStyle(
               fontSize: 11, color: Color.fromARGB(255, 113, 111, 111)),
         ),
@@ -142,10 +108,11 @@ Widget _listWidget(
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  SizedBox(height: 10,),
                   Text('Sekolah'),
                   Spacer(),
                   Text(
-                    docs.data()!['sekolah'],
+                    user['sekolah'],
                   ),
                   SizedBox(
                     width: 10.0,
@@ -159,7 +126,7 @@ Widget _listWidget(
                   Text('Jurusan '),
                   Spacer(),
                   Text(
-                    docs.data()!['jurusan'],
+                    user['jurusan'],
                   ),
                   SizedBox(
                     width: 10.0,
@@ -175,7 +142,7 @@ Widget _listWidget(
                   Text('Program Studi '),
                   Spacer(),
                   Text(
-                    docs.data()!['program_studi'],
+                    user['program_studi'],
                   ),
                   SizedBox(
                     width: 10.0,
@@ -191,7 +158,7 @@ Widget _listWidget(
                   Text('Alamat '),
                   Spacer(),
                   Text(
-                    docs.data()!['alamat'],
+                    user['alamat'],
                   ),
                   SizedBox(
                     width: 10.0,
@@ -207,7 +174,7 @@ Widget _listWidget(
                   Text('Jenis Kelamin '),
                   Spacer(),
                   Text(
-                    docs.data()!['jenis_kelamin'],
+                    user['jenis_kelamin'],
                   ),
                   SizedBox(
                     width: 10.0,
@@ -223,7 +190,7 @@ Widget _listWidget(
                   Text('Nomor ponsel '),
                   Spacer(),
                   Text(
-                    docs.data()!['nomor_ponsel'],
+                    user['nomor_ponsel'],
                   ),
                   SizedBox(
                     width: 10.0,
@@ -232,8 +199,28 @@ Widget _listWidget(
               ),
             ],
           ),
-        )
-      ],
-    ),
-  );
+        ),
+                  
+                    Container(
+                        child: ElevatedButton(
+                      onPressed: () async {
+                        await FirebaseAuth.instance.signOut();
+                        Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => login(),
+                            ),
+                            ((route) => false));
+                      },
+                      child: Text('Logout'),
+                    ))
+                  ],
+                ),
+              );
+            }
+          }
+          ),
+    );
+  }
 }
+

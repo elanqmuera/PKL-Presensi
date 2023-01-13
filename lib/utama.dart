@@ -24,7 +24,7 @@ class _MainPageState extends State<HalamanUtama> {
   }
 
 List<Widget> pages = [
-  scanqr(),
+  Scanqr(),
   // keterangan(),
       Jadwal(),
       Profil(),
